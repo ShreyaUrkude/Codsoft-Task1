@@ -1,0 +1,694 @@
+<html>
+  <head>
+<title>Job Board</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel="stylesheet">
+
+<style>
+    *{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border:none;
+    }
+    *::selection{
+        background-color: var(--main color);
+        color: white;
+    }
+    ::-webkit-scrollbar {
+        width:1rem;
+        height: .5rem;
+    }
+    ::-webkit-scrollbar-track {
+       background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: darkblue;
+     }
+     html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 7rem;
+        scroll-behavior: smooth;
+     }
+     body {
+        background-color:lightblue;
+     }
+     section {
+        padding:  2rem;
+        margin: 0 auto;
+        max-width: 1200px;
+     }
+     .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: white;
+        background-color: lightseagreen;
+        border-radius: .5rem;
+        text-transform: capitalize;
+        text-align: center;
+     }
+     .btn:hover {
+        background-color: black;
+     }
+
+     .btn:hover {
+        background-color: black;
+     }
+     .flex-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 1rem;
+        flex-wrap: wrap;
+     }
+     .header {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color:lightblue;
+        box-shadow:1px 1px 1px black;
+        z-index: 1000;
+     }
+     .header .flex {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+     }
+     #menu-btn {
+        font-size: 3rem;
+        color: black;
+        cursor: pointer;
+        display: none;
+     }
+     .header .flex .logo {
+        font-size: 2.2rem;
+        color: black;
+     }
+
+     .header .flex .logo i {
+        margin-right: .5rem;
+        color: black;
+     }
+     .header .flex .navbar a {
+       display: inline-block;
+       padding: .1rem 1.5rem;
+       font-size: 1.8rem;
+       color: black;
+       border-radius: .5rem;
+       text-transform: capitalize;
+     }
+     .header .flex .navbar a:hover {
+        background-color:lightseagreen;
+        color: white;
+     }
+     .home-container {
+        background: url('https://media.istockphoto.com/id/1207524102/vector/job-and-resume-seamless-pattern-and-background-with-line-icons-editable-stroke.jpg?s=612x612&w=0&k=20&c=ewDRXivFbgyo6G242e0R8fb7T4PSIbb4jJhMdv4bmGw=');
+        background-size: cover;
+        background-position: fixed;
+        background-attachment: fixed;
+        background-blend-mode: color;
+     }
+    .home-container .home {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-container .home form {
+        background-color:lightblue;
+        width: 50rem;
+        border-radius: .5rem;
+        padding: .4rem;
+        text-align:center;
+    }
+    .home-container .home form h3{
+       font-size: 2.5rem;
+       color: black; 
+       margin-bottom: 1rem;
+       text-transform: capitalize;
+    }
+   .home-container .home form p {
+      text-align:left;
+      font-size: 1.6rem;
+      color: black;
+      padding-top: 1rem; 
+}
+   .home-container .home form p span{
+     color: red;
+}
+.home-container .home form .input {
+   width: 100%;
+   border-radius: .5rem;
+   margin: 1rem 0;
+   background-color:white ;
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: black;
+}
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: black;
+    text-transform: capitalize;
+    padding: 1rem  0;
+ }
+.category .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25rem);
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.category .box-container .box {
+    border-radius:.5rem;
+    box-shadow:var(--box-shadow);
+    border:var(---border);
+    padding: 2rem;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.category .box-container .box  i {
+    height: 4.5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 1.8rem;
+    color: black;
+    border-radius: .5rem;
+    background-color:rgb(185, 206, 226);
+    text-align: center;
+}
+.category .box-container .box  h3 {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: black;
+    padding-bottom: .5rem;
+}
+.category .box-container .box span {
+   color: black;
+   font-size: 1.6rem;
+}
+.category .box-container .box:hover {
+    background-color: black;
+}
+.category .box-container .box:hover h3{
+    color: white;
+}
+.category .box-container .box:hover span {
+    color: white;
+}
+.category .box-container .box:hover i {
+    background-color: white;
+}
+.section-title {
+    font-size: 4rem;
+    padding: 4rem 2rem;
+}
+.job-container  .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.job-container  .box-container .box {
+    background-color: white;
+    border-radius: .5rem;
+    border: var(--border);
+    padding: 2rem;
+    overflow-x: hidden;
+}
+.job-container .box-container .box .company {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.job-container .box-container .box .company img {
+    height: 6rem;
+    width: 6rem;
+    object-fit: contain;
+}
+.job-container .box-container .box .company h3 {
+    font-size: 1.8rem;
+    color: black;
+    text-overflow: ellipsis;
+    overflow-x:hidden;
+    text-transform: capitalize;
+    padding-bottom: .5rem;
+}
+.job-container .box-container .box .company span {
+    color: black;
+    font-size: 15px;
+}
+.job-container .box-container .box .job-title {
+    font-size: 15px;
+    color: black;
+    text-transform: capitalize;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+.job-container .box-container .box .location{
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    color: black;
+}
+.job-container .box-container .box .location i {
+    margin-right: .3rem;
+    color: darkblue;
+}
+.job-container .box-container .box .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.job-container .box-container .box .tags p {
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: rgb(204, 220, 236);
+    font-size: 1.6rem;
+    color: black;
+}
+.job-container .box-container .box .tags  p i {
+    margin-right: .5rem;
+    color: black;
+}
+.job-container .box-container .box .fa-heart {
+    background-color:white;
+    border-radius: .5rem;
+    color: lightslategray;
+    font-size: 1.8rem;
+    cursor: pointer;
+    height: 4rem;
+    width: 4.5rem;
+    line-height: 4.rem;
+}
+.job-container .box-container .box .fa-heart:hover{
+    background-color: black;
+    color: white;
+}
+
+     .footer .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,30rem);
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+     }
+     .footer .grid .box h3{
+       font-size: 2rem;
+       color: black;
+       margin: 1rem 0;
+       padding-bottom:1rem;
+       text-transform: capitalize;
+     }
+    .footer .grid .box a {
+        display: block;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        color: lightslategray;
+    }
+    .footer .grid .box a i{
+       color: darkblue;
+       margin-right: .8rem;
+       transition: 2.s linear;
+    }
+    .footer .grid .box a:hover i {
+        margin-right: 2rem;
+    }
+    .footer .credit {
+       text-align: center;
+       padding: 3rem 2rem;
+       border-top:var(--border);
+       background-color: white;
+       font-size: 2rem;
+       color: lightslategray;
+       line-height: 1.5;
+    }
+    .footer .credit span {
+         color: darkblue;
+         text-transform: capitalize;
+    }
+
+     @media (max-width:991px) {
+        html {
+            font-size: 55%;
+        }
+     }
+     @media (max-width:768px){
+        #menu-btn{
+            
+                display: inline-block;
+            } 
+
+            .header .flex .navbar {
+                position: absolute;
+                top: 99%; left: 0; right: 0;
+                border-top: var(---border);
+                background-color: white;
+                padding: 1rem .5rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: .2s linear;
+            }
+            .header .flex .navbar.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .header .flex .navbar a {
+                display: block;
+                padding: 1.5rem 2rem;
+            }
+            .category .box-container{
+                grid-template-columns:repeat(auto-fit,16rem);
+            }
+            .category .box-container .box{
+               flex-flow: column;
+               text-align: center;
+            }
+        }
+
+     @media (max-width:450px) {
+        html {
+            font-size: 50%;
+        }
+        .section-title {
+            font-size: 3rem;
+        }
+     }
+
+</style>
+</head>
+
+        <header class="header">
+            <section class="flex">
+                <div id="menu-btn"class="fa-solid fa-bars"></div>
+
+                <a href="Home.html" class="logo"><i class='bx bxs-briefcase'></i>Job Board.</a>   
+                
+                <nav class="navbar">
+                    <a href="Home.html">Home </a>
+                    <a href="About.html">About us</a>
+                    <a href="Alljob.html">All Job </a>
+                    <a href="Contact.html">Contact us</a>
+                    <a href="Account.html">Account</a>
+                    </nav>
+            <a href="#" class="btn" style="margin-top:0;">Post Jobs</a>
+                    </section>
+                </header>
+
+                <div class="home-container">
+                
+                    <section class="home">
+                        <form action="" methods="post">
+                            <h3>Find  Your Dream Job</h3>
+                            <p>Job title <span>*</span></p>
+                            <input type="text" name="title" placeholder="keyword ,category or company" required maxlength="20" class="input">
+                            <p>Job Location</p>
+                            <input type="text" name="location" placeholder="city ,state or location" required maxlength="50" class="input">
+                           <input type="Submit" value="Search job" name="search" class="btn">
+                        </form>
+                        </section>
+                        </div>
+
+
+                        <section class="category">
+                            <h1 class="heading">Job categories</h1>
+
+                            <div class="box-container">
+
+                                <a href="#" class="box">
+                                    <i class="fas fa-code"></i>
+                                <div>  
+                                        <h3>Developement </h3>
+                                        <span>1200 Jobs</span>
+                                     </div>
+                                </a>
+
+                                <a href="#" class="box">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <div>  
+                                        <h3>Desginer </h3>
+                                        <span>500 Jobs</span>
+                                     </div>
+                                </a>
+
+
+                                <a href="#" class="box">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                    <div>  
+                                        <h3>Teacher </h3>
+                                        <span>200 Jobs</span>
+                                     </div>
+                                </a>
+                           
+                                <a href="#" class="box">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <div>  
+                                        <h3>Marketing </h3>
+                                        <span>1500 Jobs</span>
+                                     </div>
+                                </a>
+                                   
+                                <a href="#" class="box">
+                                    <i class="fas fa-headset"></i>
+                                    <div>  
+                                        <h3>Service </h3>
+                                        <span>3000 Jobs</span>
+                                     </div>
+                                </a>
+                                    
+
+                                <a href="#" class="box">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                    <div>  
+                                        <h3>Engineer </h3>
+                                        <span>1000 Jobs</span>
+                                     </div>
+                                </a>
+    
+                            
+                                <a href="#" class="box">
+                                    <i class="fas fa-hand-holding-dollar"></i>
+                                    <div>  
+                                        <h3>Finance </h3>
+                                        <span>2000 Jobs</span>
+                                     </div>
+                                </a>
+
+                                
+                                <a href="#" class="box">
+                                    <i class="fas fa-person-digging"></i>
+                                    <div>  
+                                        <h3>Labour</h3>
+                                        <span>1100 Jobs</span>
+                                     </div>
+                                </a>
+
+                                </div>
+                            </section>
+
+             <section class="job-container">
+              <h1 class="heading">Latest Job</h1>
+
+              <div class="box-container">
+                <div class="box">
+                    <div class="company">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYLO-tZuJTgRlMyOycfS3B11u9BX7GQ5OeSg&s" alt="">
+                        <div> 
+                            <h3> IT infosys co.</h3>
+                            <span> 1 days ago </span>
+                         </div>
+                        </div>
+                        <h3 class="job-title">senior web developement</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i>
+                        <span> Mumbai, India  </span></p>
+                        <div class="tags">
+                            <p><i class="fas fa-indian-rupee-sign"></i>
+                            <span> 11k - 25k </span></p>
+                           <p> <i  class="fas fa-briefcase"></i><span>part-time</span></p>
+                           <p> <i  class="fas fa-clock"></i><span>day  shift</span></p>
+                            </div>
+                            <div class="flex-btn">
+                                <a href="Viewjob.html" class="btn">view details </a>
+                                <button type="submit" class="far fa-heart" name="save"></button>
+                            </div>
+                            </div>
+
+
+                            <div class="box">
+                                <div class="company">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJWsO0vLa_HBOYKOmeA2c4NJuiDj7wvvV6A&s" alt="">
+                                    <div> 
+                                        <h3> HCL</h3>
+                                        <span> 10 days ago </span>
+                                     </div>
+                                    </div>
+                                    <h3 class="job-title">Frontend web developement</h3>
+                                    <p class="location"><i class="fas fa-map-marker-alt"></i>
+                                    <span> pune, India  </span></p>
+                                    <div class="tags">
+                                        <p><i class="fas fa-indian-rupee-sign"></i>
+                                        <span> 21k - 50k </span></p>
+                                       <p> <i  class="fas fa-briefcase"></i><span>full-time</span></p>
+                                       <p> <i  class="fas fa-clock"></i><span>fixed  shift</span></p>
+                                        </div>
+                                        <div class="flex-btn">
+                                            <a href="Viewjob.html" class="btn">view details </a>
+                                            <button type="submit" class="far fa-heart" name="save"></button>
+                                        </div>
+                                        </div>
+                        
+                                        <div class="box">
+                                            <div class="company">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmKvhiMB3OHNN1UqYBwwZOoJ36eirVopWAtg&s" alt="">
+                                                <div> 
+                                                    <h3> TCS co.</h3>
+                                                    <span> 30 days ago </span>
+                                                 </div>
+                                                </div>
+                                                <h3 class="job-title"> IT Services</h3>
+                                                <p class="location"><i class="fas fa-map-marker-alt"></i>
+                                                <span> Nagpur, maharashtra  </span></p>
+                                                <div class="tags">
+                                                    <p><i class="fas fa-indian-rupee-sign"></i>
+                                                    <span> 7k - 60k </span></p>
+                                                   <p> <i  class="fas fa-briefcase"></i><span>part-time</span></p>
+                                                   <p> <i  class="fas fa-clock"></i><span>day shift</span></p>
+                                                    </div>
+                                                    <div class="flex-btn">
+                                                        <a href="Viewjob.html" class="btn">view details </a>
+                                                        <button type="submit" class="far fa-heart" name="save"></button>
+                                                    </div>
+                                                    </div>
+
+
+
+                                                    <div class="box">
+                                                        <div class="company">
+                                                            <img src="data:image/jpeg;base64,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" alt="">
+                                                            <div> 
+                                                                <h3> Reliance Ind.</h3>
+                                                                <span> 8 days ago </span>
+                                                             </div>
+                                                            </div>
+                                                            <h3 class="job-title"> Bussiness</h3>
+                                                            <p class="location"><i class="fas fa-map-marker-alt"></i>
+                                                            <span> Mumbai, India  </span></p>
+                                                            <div class="tags">
+                                                                <p><i class="fas fa-indian-rupee-sign"></i>
+                                                                <span> 5k - 15k </span></p>
+                                                               <p> <i  class="fas fa-briefcase"></i><span>full-time</span></p>
+                                                               <p> <i  class="fas fa-clock"></i><span>night  shift</span></p>
+                                                                </div>
+                                                                <div class="flex-btn">
+                                                                    <a href="Viewjob.html" class="btn">view details </a>
+                                                                    <button type="submit" class="far fa-heart" name="save"></button>
+                                                                </div>
+                                                               </div>
+
+                                                               <div class="box">
+                                                                <div class="company">
+                                                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWfevLRRe5oyQGTtEKKblQ_r7Pd9RxN8uEWfLvgbcjtFLaeJF0vVQAWIWj099g9O_DCxA&usqp=CAU" alt="">
+                                                                  <div> 
+                                                                      <h3> HDFC bank.</h3>
+                                                                      <span> 15 days ago </span>
+                                                                   </div>
+                                                                  </div>
+                                                                  <h3 class="job-title">Financial Services</h3>
+                                                                  <p class="location"><i class="fas fa-map-marker-alt"></i>
+                                                                  <span> Banglore, India  </span></p>
+                                                                  <div class="tags">
+                                                                      <p><i class="fas fa-indian-rupee-sign"></i>
+                                                                      <span> 11k - 25k </span></p>
+                                                                     <p> <i  class="fas fa-briefcase"></i><span>part-time</span></p>
+                                                                     <p> <i  class="fas fa-clock"></i><span>day shift</span></p>
+                                                                      </div>
+                                                                      <div class="flex-btn">
+                                                                          <a href="Viewjob.html" class="btn">view details </a>
+                                                                          <button type="submit" class="far fa-heart" name="save"></button>
+                                                                      </div>
+                                                                      </div>
+                                                                    
+                                                                      <div class="box">
+                                                                          <div class="company">
+                                                                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcwKT2HBmudUAajt7WyS_ZoMEllYAWC2xDng&s" alt="">
+                                                                              <div> 
+                                                                                  <h3> Dell Techonology.</h3>
+                                                                                  <span> 15 days ago </span>
+                                                                               </div>
+                                                                              </div>
+                                                                              <h3 class="job-title">Manufacture Services</h3>
+                                                                              <p class="location"><i class="fas fa-map-marker-alt"></i>
+                                                                              <span> Hyderabad, India  </span></p>
+                                                                              <div class="tags">
+                                                                                  <p><i class="fas fa-indian-rupee-sign"></i>
+                                                                                  <span> 9k - 20k </span></p>
+                                                                                 <p> <i  class="fas fa-briefcase"></i><span>full-time</span></p>
+                                                                                 <p> <i  class="fas fa-clock"></i><span>day shift</span></p>
+                                                                                  </div>
+                                                                                  <div class="flex-btn">
+                                                                                      <a href="Viewjob.html" class="btn">view details </a>
+                                                                                      <button type="submit" class="far fa-heart" name="save"></button>
+                                                                                  </div>
+                                                                                  </div>
+                                                                                    </div>
+                                                          
+                                                                                 <div style="text-align:center; margin-top:2rem;">
+                                                                                  <a href="Alljob.html" class="btn">view all </a>
+                                                                                   </div>
+                                                                    
+                                                          
+                                            
+
+<footer class="footer">
+<section class="grid">
+<div class="box">
+<h3>Quick link</h3>
+<a href="Home.html"><i class="fa-solid fa-angle-right"></i>Home</a>
+<a href="About.html"><i class="fa-solid fa-angle-right"></i>About</a>
+<a href="Alljob.html"><i class="fa-solid fa-angle-right"></i>All Job</a>
+<a href="Contact.html"><i class="fa-solid fa-angle-right"></i>Contact</a>
+<a href="#"><i class="fa-solid fa-angle-right"></i>filter Search</a>
+</div>
+
+
+<div class="box">
+<h3> extra link</h3>
+
+<a href="#"><i class="fa-solid fa-angle-right"></i>Account</a>
+<a href="Login.html"><i class="fa-solid fa-angle-right"></i>Login</a>
+<a href="Register.html"><i class="fa-solid fa-angle-right"></i>Register</a>
+<a href="#"><i class="fa-solid fa-angle-right"></i>Post Job</a>
+<a href="#"><i class="fa-solid fa-angle-right"></i>Dashboard</a>
+</div>
+
+<div class="box">
+<h3>Follow us</h3>   
+<a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+<a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+<a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+<a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+<a href="#"><i class="fab fa-youtube"></i>Youtube</a>
+</div> 
+
+</section>
+<div class="credit">&copy; copyright @2024 by<span>Mrs.Shreya Urkude</span>
+| all right reserved!</div>
+
+</footer>
+<script src="Job.js"></script>
+</body>
+</html>
+   
