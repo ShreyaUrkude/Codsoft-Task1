@@ -1,0 +1,467 @@
+<html>
+  <head>
+<title>About</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel="stylesheet">
+
+<style>
+    *{
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border:none;
+    }
+    *::selection{
+        background-color: var(--main color);
+        color: white;
+    }
+    ::-webkit-scrollbar {
+        width:1rem;
+        height: .5rem;
+    }
+    ::-webkit-scrollbar-track {
+       background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: darkblue;
+     }
+     html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 7rem;
+        scroll-behavior: smooth;
+     }
+     body {
+        background-color:lightblue;
+     }
+     section {
+        padding:  2rem;
+        margin: 0 auto;
+        max-width: 1200px;
+     }
+     .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: white;
+        background-color: lightseagreen;
+        border-radius: .5rem;
+        text-transform: capitalize;
+        text-align: center;
+     }
+     .btn:hover {
+        background-color: black;
+     }
+     .header {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: white;
+        box-shadow:1px 1px 1px black;
+        z-index: 1000;
+     }
+     .header .flex {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+     }
+     #menu-btn {
+        font-size: 3rem;
+        color: black;
+        cursor: pointer;
+        display: none;
+     }
+     .header .flex .logo {
+        font-size: 2.2rem;
+        color: black;
+     }
+
+     .header .flex .logo i {
+        margin-right: .5rem;
+        color: lightslategray;
+     }
+     .header .flex .navbar a {
+       display: inline-block;
+       padding: .1rem 1.5rem;
+       font-size: 1.8rem;
+       color: black;
+       border-radius: .5rem;
+       text-transform: capitalize;
+     }
+     .header .flex .navbar a:hover {
+        background-color:lightseagreen;
+        color: white;
+     }
+     .about img {
+     width: 100%;
+     margin-bottom: 1.5rem;
+     }
+    .about .box {
+      background-color: white;
+      border-radius: .5rem;
+      border: var(---border);
+      padding:3rem 2rem;
+      box-shadow: var(---box-shadow);
+    }
+    .about .box h3 {
+      font-size: 2.5rem;
+      color: black;
+      margin-bottom: 1rem;
+      text-transform: capitalize;
+    }
+
+    .about .box p {
+      padding: 1rem 0;
+      line-height: 1.8;
+      color: black;
+      font-size: 1.6rem;
+    }
+    .section-title {
+      border-top: 1rem solid white;
+      border-bottom: 1rem solid white;
+      background-color: rgb(1, 83, 83);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      font-size: 5rem;
+    }
+    .review .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    }
+    .review .box-container .box {
+      background-color: white;
+      box-shadow: var(---box-shadow);
+      border: var(---border);
+      border-radius: .5rem;
+      padding: 2rem;
+    }
+    .review .box-container .box .stars {
+      margin-bottom:20px;
+    }
+    .review .box-container .box .stars i {
+      color: darkblue;
+      font-size: 1.5rem;
+    }
+    .review .box-container .box .title {
+      text-transform: capitalize;
+   font-size: 2rem;
+   color: black;
+   text-align: right;
+    }
+    .review .box-container .box  p {
+    text-align: right;
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem 0;
+    line-height: 1.8;
+    }
+    .review .box-container .box .user {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1px;
+      align-items: center;
+    }
+    .review .box-container .box .user img {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .review .box-container .box .user h3 {
+     font-size: 18px;
+     color: black;
+     margin-bottom: 5px;
+    }
+    .review .box-container .box .user span {
+      color: blue;
+      font-size: 1.6rem;
+    }
+
+     .footer .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,30rem);
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+     }
+     .footer .grid .box h3{
+       font-size: 2rem;
+       color: black;
+       margin: 1rem 0;
+       padding-bottom:1rem;
+       text-transform: capitalize;
+     }
+    .footer .grid .box a {
+        display: block;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        color: lightslategray;
+    }
+    .footer .grid .box a i{
+       color: darkblue;
+       margin-right: .8rem;
+       transition: 2.s linear;
+    }
+    .footer .grid .box a:hover i {
+        margin-right: 2rem;
+    }
+    .footer .credit {
+       text-align: center;
+       padding: 3rem 2rem;
+       border-top:var(--border);
+       background-color: white;
+       font-size: 2rem;
+       color: lightslategray;
+       line-height: 1.5;
+    }
+    .footer .credit span {
+         color: darkblue;
+         text-transform: capitalize;
+    }
+
+     @media (max-width:991px) {
+        html {
+            font-size: 55%;
+        }
+        .section-title  {
+         font-size: 5rem;
+        }
+     }
+     @media (max-width:768px){
+        #menu-btn{
+            
+                display: inline-block;
+            } 
+
+            .header .flex .navbar {
+                position: absolute;
+                top: 99%; left: 0; right: 0;
+                border-top: var(---border);
+                background-color: white;
+                padding: 1rem .5rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: .2s linear;
+            }
+            .header .flex .navbar.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .header .flex .navbar a {
+                display: block;
+                padding: 1.5rem 2rem;
+            }
+        }
+     @media (max-width:450px) {
+        html {
+            font-size: 50%;
+        }
+     }
+
+</style>
+</head>
+
+    <body>
+        <header class="header">
+            <section class="flex">
+                <div id="menu-btn" class="bx bx-bar-chart"></div>
+
+                <a href="Home.html" class="logo"><i class='bx bxs-briefcase'></i>Job Board.</a>   
+                
+                <nav class="navbar">
+                    <a href="Home.html">Home </a>
+                    <a href="About.html">About us</a>
+                    <a href="Alljob.html">All Job </a>
+                    <a href="Contact.html">Contact us</a>
+                    <a href="Account.html">Account</a>
+                    </nav>
+            <a href="#" class="btn" style="margin-top:0;"> Post Jobs</a>
+                    </section>
+                </header>
+
+
+                <div class="section-title">About us</div> 
+<section class="about">
+        <img src="https://static.vecteezy.com/system/resources/previews/021/608/976/original/we-are-hiring-banner-free-png.png" alt="">
+        <div class="box">
+         <h3>Why choose us ? </h3>
+         <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse pariatur quidem magni necessitatibus eaque, repellat, error quos repellendus numquam optio quisquam animi architecto labore voluptatem assumenda sed dolorum. Error, aperiam. </p>
+         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt mollitia atque, ea, reiciendis libero aliquid quaerat, asperiores praesentium repudiandae voluptas impedit esse aliquam nihil architecto natus. Pariatur repellat quas amet. </p>
+         <a href="Contact.html" class="btn"> Contact us </a>
+      
+      </div>
+   </section>
+
+
+   <div class="section-title">top reviews</div>
+   <section class="review"> 
+      <div class="box-container">
+         <div class="box">
+           <div class="stars"> 
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+            </div>
+   <h3 class="title">amazing result</h3>
+   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veritatis aliquid in labore. Atque omnis qui labore saepe ullam cumque sunt necessitatibus dolorum, distinctio enim. Fugit tempore repellat natus repudiandae.        </p>
+ <div class="user">
+   <img src="https://static.vecteezy.com/system/resources/thumbnails/030/798/360/small_2x/beautiful-asian-girl-wearing-over-size-hoodie-in-casual-style-ai-generative-photo.jpg" alt="">
+   <div>
+   <h3>shrey ur</h3>
+   <span> Developer </span>
+   </div>
+</div>
+ </div>
+
+ <div class="box">
+ <div class="stars"> 
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star-half-alt"></i>
+           </div>
+  <h3 class="title">easy to use</h3>
+  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veritatis aliquid in labore. Atque omnis qui labore saepe ullam cumque sunt necessitatibus dolorum, distinctio enim. Fugit tempore repellat natus repudiandae.        </p>
+<div class="user">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNyIXgV_NXProOAfuAvIClK02NWo31aJmZPQ&s" alt="">
+  <div>
+  <h3>Rey ur</h3>
+  <span> Web desginer</span>
+  </div>
+</div>
+</div>
+
+
+<div class="box">
+<div class="stars"> 
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star-half-alt"></i>
+           </div>
+  <h3 class="title">Got selected</h3>
+  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veritatis aliquid in labore. Atque omnis qui labore saepe ullam cumque sunt necessitatibus dolorum, distinctio enim. Fugit tempore repellat natus repudiandae.        </p>
+<div class="user">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAViVCVo1uG7drnr3D6rpC6gB7YIiwWyptEg&s" alt="">
+  <div>
+  <h3>shrunk yellowy</h3>
+  <span> Frontend</span>
+  </div>
+</div>
+</div>
+
+
+<div class="box">
+<div class="stars"> 
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star"></i>
+   <i class="fas fa-star-half-alt"></i>
+           </div>
+  <h3 class="title">Good Experinec</h3>
+  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veritatis aliquid in labore. Atque omnis qui labore saepe ullam cumque sunt necessitatibus dolorum, distinctio enim. Fugit tempore repellat natus repudiandae.        </p>
+<div class="user">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0BNWEelRlcq_cASneWhEXkE81HUZtfA925w&s" alt="">
+  <div>
+  <h3>Rehnshhy DEv</h3>
+  <span>Manager</span>
+  </div>
+</div>
+</div>
+
+
+<div class="box">
+   <div class="stars"> 
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+              </div>
+     <h3 class="title">Good Service</h3>
+     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veritatis aliquid in labore. Atque omnis qui labore saepe ullam cumque sunt necessitatibus dolorum, distinctio enim. Fugit tempore repellat natus repudiandae.        </p>
+   <div class="user">
+     <img src="https://thumbs.dreamstime.com/z/stylish-girl-black-stylish-girl-black-dress-round-sunglasses-posing-brick-wall-modern-youth-fashion-103962768.jpg" alt="">
+     <div>
+     <h3>Dimple rk</h3>
+     <span> Finance</span>
+     </div>
+   </div>
+   </div>
+
+
+   <div class="box">
+      <div class="stars"> 
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+                 </div>
+        <h3 class="title">Hardwork</h3>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veritatis aliquid in labore. Atque omnis qui labore saepe ullam cumque sunt necessitatibus dolorum, distinctio enim. Fugit tempore repellat natus repudiandae.        </p>
+      <div class="user">
+        <img src="https://static.tnn.in/thumb/102340612/102340612.jpg?height=746&width=420&resizemode=76&imgsize=40702" alt="">
+        <div>
+        <h3>John wel</h3>
+        <span>Bussiness</span>
+        </div>
+      </div>
+      </div>
+</div>
+   </section>
+
+                <footer class="footer">
+                    <section class="grid">
+                        <div class="box">
+                            <h3>Quick link</h3>
+                             <a href="Home.html"><i class="fa-solid fa-angle-right"></i>Home</a>
+                             <a href="About.html"><i class="fa-solid fa-angle-right"></i>About</a>
+                             <a href="Alljob.html"><i class="fa-solid fa-angle-right"></i>All Job</a>
+                             <a href="Contact.html"><i class="fa-solid fa-angle-right"></i>Contact</a>
+                             <a href="#"><i class="fa-solid fa-angle-right"></i>filter Search</a>
+                            </div>
+
+
+                            <div class="box">
+                                <h3> extra link</h3>
+                                 
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Account</a>
+                                 <a href="Login.html"><i class="fa-solid fa-angle-right"></i>Login</a>
+                                 <a href="Register.html"><i class="fa-solid fa-angle-right"></i>Register</a>
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Post Job</a>
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Dashboard</a>
+                                </div>
+                              
+                            <div class="box">
+                                <h3>Follow us</h3>   
+                                <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+                                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                                <a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a href="#"><i class="fab fa-youtube"></i>Youtube</a>
+                                </div> 
+
+                        </section>
+                       <div class="credit">&copy; copyright @2024 by<span>Mrs.Shreya Urkude</span>
+                    | all right reserved!</div>
+
+                        </footer>
+                <script src="Job.js"></script>
+        </body>
+        </html>
+    
