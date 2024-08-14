@@ -1,0 +1,385 @@
+<html>
+  <head>
+<title>Contact</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel="stylesheet">
+
+<style>
+    *{
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border:none;
+    }
+    *::selection{
+        background-color: var(--main color);
+        color: white;
+    }
+    ::-webkit-scrollbar {
+        width:1rem;
+        height: .5rem;
+    }
+    ::-webkit-scrollbar-track {
+       background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color:darkblue;
+     }
+     html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 7rem;
+        scroll-behavior: smooth;
+     }
+     body {
+        background-color:lightblue;
+     }
+     section {
+        padding:  2rem;
+        margin: 0 auto;
+        max-width: 1200px;
+     }
+     .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: white;
+        background-color: lightseagreen;
+        border-radius: .5rem;
+        text-transform: capitalize;
+        text-align: center;
+     }
+     .btn:hover {
+        background-color: black;
+     }
+     .header {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: white;
+        box-shadow:1px 1px 1px black;
+        z-index: 1000;
+     }
+     .header .flex {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+     }
+     #menu-btn {
+        font-size: 3rem;
+        color: black;
+        cursor: pointer;
+        display: none;
+     }
+     .header .flex .logo {
+        font-size: 2.2rem;
+        color: black;
+     }
+
+     .header .flex .logo i {
+        margin-right: .5rem;
+        color: lightslategray;
+     }
+     .header .flex .navbar a {
+       display: inline-block;
+       padding: .1rem 1.5rem;
+       font-size: 1.8rem;
+       color: black;
+       border-radius: .5rem;
+       text-transform: capitalize;
+     }
+     .header .flex .navbar a:hover {
+        background-color:lightseagreen;
+        color: white;
+     }
+     .section-title {
+      border-top: 1rem solid white;
+      border-bottom: 1rem solid white;
+      background-color: rgb(1, 83, 83);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      font-size: 5rem;
+    }
+    .contact .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,30rem);
+      gap: 1.5rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+     .contact  .box-container .box {
+      background-color: white;
+      border: var(---border);
+      border-radius: .5rem;
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+      text-align: center;
+     }
+     .contact  .box-container .box i {
+      height: 4.5rem;
+      width: 5rem;
+      line-height: 4.5rem;
+      font-size: 2rem;
+      color:white;
+      background-color: black;
+      border-radius: .5rem;
+      margin-bottom: 1rem;
+     }
+     .contact  .box-container .box a {
+      display: block;
+      padding-top: .5rem;
+      font-size: 1.6rem;
+      color: black;
+      line-height: 1.8;
+     }
+     .contact form {
+      margin-top: 2rem;
+      background-color: white;
+      border: var(---border);
+      border-radius: .5rem;
+      box-shadow: var(--box-shadow);
+      padding:2rem;
+      text-align: center;
+     } 
+     .contact form h3 {
+      font-size: 2.5rem;
+      color: black;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+     }
+    .contact form .flex {
+     display: flex;
+     flex-wrap: wrap;
+     column-gap: 1rem;
+    }
+    .contact form .flex .box {
+      flex:  1 1 40rem;
+    }
+    .contact form .input {
+      width: 100%;
+      border-radius: .5rem;
+      padding: 1.4rem;
+      color: black;
+      font-size: 1.8rem;
+      background-color:rgb(213, 227, 241);
+      margin: 1rem 0;
+    }
+    .contact form p {
+      text-align: center;
+      font-size: 1.6rem;
+      padding-top: 1rem;
+      color: black;
+    }
+    .contact form p span {
+      color: red;
+    }
+    .contact  form textarea {
+    height: 15rem;
+    resize: none;
+    }  
+
+
+     .footer .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,30rem);
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+     }
+     .footer .grid .box h3{
+       font-size: 2rem;
+       color: black;
+       margin: 1rem 0;
+       padding-bottom:1rem;
+       text-transform: capitalize;
+     }
+    .footer .grid .box a {
+        display: block;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        color: lightslategray;
+    }
+    .footer .grid .box a i{
+       color: darkblue;
+       margin-right: .8rem;
+       transition: 2.s linear;
+    }
+    .footer .grid .box a:hover i {
+        margin-right: 2rem;
+    }
+    .footer .credit {
+       text-align: center;
+       padding: 3rem 2rem;
+       border-top:var(--border);
+       background-color: white;
+       font-size: 2rem;
+       color: lightslategray;
+       line-height: 1.5;
+    }
+    .footer .credit span {
+         color: darkblue;
+         text-transform: capitalize;
+    }
+
+     @media (max-width:991px) {
+        html {
+            font-size: 55%;
+        }
+     }
+     @media (max-width:768px){
+        #menu-btn{
+            
+                display: inline-block;
+            } 
+
+            .header .flex .navbar {
+                position: absolute;
+                top: 99%; left: 0; right: 0;
+                border-top: var(---border);
+                background-color: white;
+                padding: 1rem .5rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: .2s linear;
+            }
+            .header .flex .navbar.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .header .flex .navbar a {
+                display: block;
+                padding: 1.5rem 2rem;
+            }
+        }
+     @media (max-width:450px) {
+        html {
+            font-size: 50%;
+        }
+     }
+
+</style>
+</head>
+
+    <body>
+        <header class="header">
+            <section class="flex">
+                <div id="menu-btn" class="bx bx-bar-chart"></div>
+
+                <a href="Home.html" class="logo"><i class='bx bxs-briefcase'></i>Job Board.</a>   
+                
+                <nav class="navbar">
+                    <a href="Home.html">Home </a>
+                    <a href="About.html">About us</a>
+                    <a href="Alljob.html">All Job </a>
+                    <a href="Contact.html">Contact us</a>
+                    <a href="Account.html">Account</a>
+                    </nav>
+            <a href="#" class="btn" style="margin-top:0;"> Post Jobs</a>
+                    </section>
+                </header>
+
+                <div class="section-title">Contact us</div>
+                 <section class="contact">
+
+                  <div class="box-container">
+
+                     <div  class="box">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:1234567890">123-456-7890</a>
+                        <a href="tel:1112223333">111-222-3333</a>
+                        </div>
+
+                        <div  class="box">
+                           <i class="fas fa-envelope"></i>
+                           <a href="mailto:shreyaurkude@gmail.com">shreyaurkude@gmail.com</a>
+                           <a href="mailto:shruturkude1@gmail.com">shruturkude1@gmail.com</a>
+                           
+                           </div>
+                     <div class="box">
+                        <i class="fas fa-map-marker-alt"></i>
+                         <a href="#">flat no. 2 building Nagpur,Maharashtra,India 442103</a>  
+                        </div>
+                     </div>
+
+                     <form action="" method="post">
+                        <h3>drop  your message   </h3>
+                        <div class="flex">
+                           <div class="box">
+                              <p>name<span>* </span></p>
+                              <input type="text" name="name" required maxlength= 20 placeholder="enter your name" class="input">
+                              </div>
+
+                              <div class="box">
+                                 <p>number<span>* </span></p>
+                                 <input type="number" name="number" required min="0" max="9999999999" maxlength= 10 placeholder="enter your number" class="input">
+                                 </div>
+                                 <div class="box">
+                                    <p>email<span>* </span></p>
+                                    <input type="email" name="email" required  maxlength= 20 placeholder="enter your email" class="input">
+                                    </div>
+
+                                 <div class="box">
+                                    <p>role<span>* </span></p>
+                                    <select name="role"  required class="input">
+                                      <option value="employee">job seeker (employee)</option> 
+                                      <option value="employeer">job provider (employeer)</option> 
+                                    </select>
+                                   </div>
+                                   </div>
+                                   <p>message<span>*</span>  </p>
+                              <textarea name="message" class="input" required maxlength="10000" placeholder="enter your message" cols="30" rows="10"></textarea>
+                              <h3>Upload resume  </h3>
+                              <input type="file" name="myfile" class="btn"> 
+                              
+                              <input type="submit" value="send message" name="send" class="btn">
+                                
+                           </form>
+                  </section>
+
+
+                <footer class="footer">
+                    <section class="grid">
+                        <div class="box">
+                            <h3>Quick link</h3>
+                             <a href="Home.html"><i class="fa-solid fa-angle-right"></i>Home</a>
+                             <a href="About.html"><i class="fa-solid fa-angle-right"></i>About</a>
+                             <a href="Alljob.html"><i class="fa-solid fa-angle-right"></i>All Job</a>
+                             <a href="Contact.html"><i class="fa-solid fa-angle-right"></i>Contact</a>
+                             <a href="#"><i class="fa-solid fa-angle-right"></i>filter Search</a>
+                            </div>
+
+
+                            <div class="box">
+                                <h3> extra link</h3>
+                                 
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Account</a>
+                                 <a href="Login.html"><i class="fa-solid fa-angle-right"></i>Login</a>
+                                 <a href="Register.html"><i class="fa-solid fa-angle-right"></i>Register</a>
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Post Job</a>
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Dashboard</a>
+                                </div>
+                              
+                            <div class="box">
+                                <h3>Follow us</h3>   
+                                <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+                                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                                <a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a href="#"><i class="fab fa-youtube"></i>Youtube</a>
+                                </div> 
+
+                        </section>
+                       <div class="credit">&copy; copyright @2024 by<span>Mrs.Shreya Urkude</span>
+                    | all right reserved!</div>
+
+                        </footer>
+                <script src="Job.js"></script>
+        </body>
+        </html>
+    
