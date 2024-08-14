@@ -1,0 +1,305 @@
+<html>
+  <head>
+<title>Login</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel="stylesheet">
+
+<style>
+    *{
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border:none;
+    }
+    *::selection{
+        background-color: var(--main color);
+        color: white;
+    }
+    ::-webkit-scrollbar {
+        width:1rem;
+        height: .5rem;
+    }
+    ::-webkit-scrollbar-track {
+       background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--main-color);
+     }
+     html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 7rem;
+        scroll-behavior: smooth;
+     }
+     body {
+        background-color:lightblue;
+     }
+     section {
+        padding:  2rem;
+        margin: 0 auto;
+        max-width: 1200px;
+     }
+     .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: white;
+        background-color: lightseagreen;
+        border-radius: .5rem;
+        text-transform: capitalize;
+        text-align: center;
+     }
+     .btn:hover {
+        background-color: black;
+     }
+     .header {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: white;
+        box-shadow:1px 1px 1px black;
+        z-index: 1000;
+     }
+     .header .flex {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+     }
+     #menu-btn {
+        font-size: 3rem;
+        color: black;
+        cursor: pointer;
+        display: none;
+     }
+     .header .flex .logo {
+        font-size: 2.2rem;
+        color: black;
+     }
+
+     .header .flex .logo i {
+        margin-right: .5rem;
+        color: lightslategray;
+     }
+     .header .flex .navbar a {
+       display: inline-block;
+       padding: .1rem 1.5rem;
+       font-size: 1.8rem;
+       color: black;
+       border-radius: .5rem;
+       text-transform: capitalize;
+     }
+     .header .flex .navbar a:hover {
+        background-color:lightseagreen;
+        color: white;
+     }
+     .account-form-container {
+      background: url('https://media.istockphoto.com/id/1207524102/vector/job-and-resume-seamless-pattern-and-background-with-line-icons-editable-stroke.jpg?s=612x612&w=0&k=20&c=ewDRXivFbgyo6G242e0R8fb7T4PSIbb4jJhMdv4bmGw=')no-repeat;
+      background-size: cover;
+      background-position: fixed;
+      background-attachment: fixed;
+      background-blend-mode: color;
+   }
+   .account-form-container .account-form{
+     min-height: 80vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .account-form-container .account-form form {
+      background-color: lightblue;
+      border-radius: .5rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      width: 50rem;
+   }
+   .account-form-container .account-form form h3 {
+     font-size: 2.5rem;
+     color: black;
+     text-transform: capitalize;
+     margin-bottom: 1rem;
+   } 
+   .account-form-container .account-form form .input {
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 1.8rem;
+      padding: 1.4rem;
+      background-color: white;
+      border-radius: .5rem;
+   }
+   .account-form-container .account-form form p {
+      padding: 1rem 0;
+      font-size: 1.6rem;
+      color:black;
+   }
+   .account-form-container .account-form form p a {
+      color: black;
+   }
+   .account-form-container .account-form form p a:hover {
+     color: black; 
+     text-decoration: underline;
+   }    
+ 
+
+
+
+
+
+
+     .footer .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,30rem);
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+     }
+     .footer .grid .box h3{
+       font-size: 2rem;
+       color: black;
+       margin: 1rem 0;
+       padding-bottom:1rem;
+       text-transform: capitalize;
+     }
+    .footer .grid .box a {
+        display: block;
+        padding: 1.5rem 0;
+        font-size: 1.6rem;
+        color: lightslategray;
+    }
+    .footer .grid .box a i{
+       color: darkblue;
+       margin-right: .8rem;
+       transition: 2.s linear;
+    }
+    .footer .grid .box a:hover i {
+        margin-right: 2rem;
+    }
+    .footer .credit {
+       text-align: center;
+       padding: 3rem 2rem;
+       border-top:var(--border);
+       background-color: white;
+       font-size: 2rem;
+       color: lightslategray;
+       line-height: 1.5;
+    }
+    .footer .credit span {
+         color: darkblue;
+         text-transform: capitalize;
+    }
+
+     @media (max-width:991px) {
+        html {
+            font-size: 55%;
+        }
+     }
+     @media (max-width:768px){
+        #menu-btn{
+            
+                display: inline-block;
+            } 
+
+            .header .flex .navbar {
+                position: absolute;
+                top: 99%; left: 0; right: 0;
+                border-top: var(---border);
+                background-color: white;
+                padding: 1rem .5rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: .2s linear;
+            }
+            .header .flex .navbar.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .header .flex .navbar a {
+                display: block;
+                padding: 1.5rem 2rem;
+            }
+        }
+     @media (max-width:450px) {
+        html {
+            font-size: 50%;
+        }
+     }
+
+</style>
+</head>
+
+    <body>
+        <header class="header">
+            <section class="flex">
+                <div id="menu-btn" class="bx bx-bar-chart"></div>
+
+                <a href="Home.html" class="logo"><i class='bx bxs-briefcase'></i>Job Board.</a>   
+                
+                <nav class="navbar">
+                    <a href="Home.html">Home </a>
+                    <a href="About.html">About us</a>
+                    <a href="Alljob.html">All Job </a>
+                    <a href="Contact.html">Contact us</a>
+                    <a href="Account.html">Account</a>
+                    </nav>
+            <a href="#" class="btn" style="margin-top:0;"> Post Jobs</a>
+                    </section>
+                </header>
+                <div class="account-form-container">
+                  <section class="account-form">
+                   <form action="" method="post">
+                      <h3>Welcome Back !</h3>
+                      <input type="email" required name="email" maxlength="20" placeholder="enter your email" class="input">
+                      <input type="password" required name="password" maxlength="20" placeholder="enter your password" class="input">
+                      <p>Don't have an account?  <a href="Register.html">register now </a></p>
+                      <input type="submit" value="login now" name="submit" class="btn"></form>  
+                   
+                      </form>
+                      </section>
+                      </div>
+
+
+
+                <footer class="footer">
+                    <section class="grid">
+                        <div class="box">
+                            <h3>Quick link</h3>
+                             <a href="Home.html"><i class="fa-solid fa-angle-right"></i>Home</a>
+                             <a href="About.html"><i class="fa-solid fa-angle-right"></i>About</a>
+                             <a href="Alljob.html"><i class="fa-solid fa-angle-right"></i>All Job</a>
+                             <a href="Contact.html"><i class="fa-solid fa-angle-right"></i>Contact</a>
+                             <a href="#"><i class="fa-solid fa-angle-right"></i>filter Search</a>
+                            </div>
+
+
+                            <div class="box">
+                                <h3> extra link</h3>
+                                 
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Account</a>
+                                 <a href="Login.html"><i class="fa-solid fa-angle-right"></i>Login</a>
+                                 <a href="Register.html"><i class="fa-solid fa-angle-right"></i>Register</a>
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Post Job</a>
+                                 <a href="#"><i class="fa-solid fa-angle-right"></i>Dashboard</a>
+                                </div>
+                              
+                            <div class="box">
+                                <h3>Follow us</h3>   
+                                <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+                                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                                <a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a href="#"><i class="fab fa-youtube"></i>Youtube</a>
+                                </div> 
+
+                        </section>
+                       <div class="credit">&copy; copyright @2024 by<span>Mrs.Shreya Urkude</span>
+                    | all right reserved!</div>
+
+                        </footer>
+                <script src="Job.js"></script>
+        </body>
+        </html>
+    
